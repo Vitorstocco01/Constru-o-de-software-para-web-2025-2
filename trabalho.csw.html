@@ -1,0 +1,452 @@
+/* style.css - tema claro, responsivo */
+:root{
+  --bg:#f9fbff;
+  --card:#ffffff;
+  --primary:#2b67f6;
+  --muted:#6b7280;
+  --accent:#f6f9ff;
+  --border:#e6eefc;
+  --maxw:1100px;
+  --radius:12px;
+  --glass: rgba(255,255,255,0.6);
+  --shadow: 0 6px 18px rgba(30,41,59,0.06);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing: border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:linear-gradient(180deg,var(--bg),#ffffff);
+  color:#0f172a;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+  padding:24px 16px;
+}
+
+.container{
+  width:100%;
+  max-width:var(--maxw);
+  margin:0 auto;
+}
+
+/* header / nav */
+.header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:24px;
+}
+.brand{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  text-decoration:none;
+  color:var(--primary);
+}
+.logo{
+  width:48px;
+  height:48px;
+  border-radius:10px;
+  background:linear-gradient(135deg,var(--primary),#6da1ff);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-weight:700;
+  box-shadow:var(--shadow);
+}
+.nav{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+.nav a{
+  padding:10px 12px;
+  border-radius:8px;
+  text-decoration:none;
+  color:var(--muted);
+  font-weight:600;
+}
+.nav a:hover{background:var(--accent); color:var(--primary)}
+
+/* hero */
+.hero{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:20px;
+  display:grid;
+  grid-template-columns: 1fr 320px;
+  gap:18px;
+  align-items:start;
+  box-shadow:var(--shadow);
+  margin-bottom:18px;
+}
+.hero h1{margin:0 0 6px 0; font-size:26px}
+.subtitle{color:var(--muted); margin:0 0 12px 0}
+.badge{display:inline-block;padding:6px 10px;border-radius:999px;background:#e7f0ff;color:var(--primary);font-weight:700;margin-bottom:8px}
+
+/* cards and sections */
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:16px;
+  border-radius:12px;
+  box-shadow:var(--shadow);
+  margin-bottom:16px;
+}
+
+/* grid for features */
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr; padding:16px}
+  .grid-3{grid-template-columns:1fr; }
+  .nav{display:none}
+}
+
+/* tables */
+.table{
+  width:100%;
+  border-collapse:collapse;
+}
+.table th, .table td{
+  text-align:left;
+  padding:10px;
+  border-bottom:1px solid var(--border);
+}
+.table th{background:var(--accent);font-weight:700}
+
+/* footer */
+.footer{
+  margin-top:20px;
+  text-align:center;
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* form */
+.form-row{display:flex;gap:12px}
+.form-row .field{flex:1}
+.input, textarea, select{
+  width:100%;
+  padding:10px;
+  border-radius:8px;
+  border:1px solid var(--border);
+  background:transparent;
+  font-size:14px;
+}
+.btn{
+  display:inline-block;
+  padding:10px 14px;
+  background:var(--primary);
+  color:white;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:700;
+  border:none;
+  cursor:pointer;
+}
+
+/* small helpers */
+.kv{color:var(--muted); font-size:13px}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{padding:6px 8px;border-radius:999px;background:var(--accent);color:var(--primary);font-weight:600}
+
+/* anchored section spacing */
+.section{scroll-margin-top:110px;padding-top:6px}
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vitor Mendonça — Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <a class="brand" href="index.html">
+        <div class="logo">VM</div>
+        <div>
+          <div style="font-weight:800">Vitor Mendonça</div>
+          <div class="kv">Sistemas de Informação • UVV (2025)</div>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="menu principal">
+        <a href="index.html">Home</a>
+        <a href="curriculo.html">Currículo</a>
+        <a href="github.html">GitHub</a>
+        <a href="servicos.html">Serviços & Contato</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero card">
+        <div>
+          <div class="badge">Estudante de SI • UVV</div>
+          <h1>Vitor Mendonça Stocco dos Santos</h1>
+          <p class="subtitle">Estudante de Sistemas de Informação (início 2025). Apaixonado por desenvolvimento web, fã de futebol e basquete.</p>
+
+          <div class="card">
+            <h3>Resumo rápido</h3>
+            <p><strong>Vida acadêmica:</strong> Estudou na escola S.E.B. e atualmente cursa Sistemas de Informação na UVV (2025).</p>
+            <p><strong>Objetivo profissional:</strong> Trabalhar com desenvolvimento de sites e aplicações web, com foco em criação de sites institucionais para pequenas empresas e academias.</p>
+            <p><strong>Hobbies:</strong> Futebol, basquete e ouvir música (ex: "Baby" — Justin Bieber).</p>
+
+            <p style="margin-top:10px">
+              <a href="#sobre" class="btn">Saber mais sobre mim</a>
+              <a href="servicos.html" style="margin-left:8px" class="btn">Ver serviços</a>
+            </p>
+          </div>
+
+          <div style="margin-top:12px" id="sobre" class="section">
+            <h3>Minhas matérias (exemplo neste semestre)</h3>
+            <div class="chips">
+              <div class="chip">Desenvolvimento Web</div>
+              <div class="chip">Algoritmos</div>
+              <div class="chip">Banco de Dados</div>
+              <div class="chip">Engenharia de Software</div>
+            </div>
+          </div>
+
+          <div style="margin-top:14px">
+            <a href="#midia" class="kv">Ir para áudio & vídeo ▶</a>
+          </div>
+        </div>
+
+        <aside>
+          <div class="card">
+            <h4>Dados acadêmicos</h4>
+            <p class="kv"><strong>Escola:</strong> S.E.B.<br/><strong>Faculdade:</strong> UVV — Sistemas de Informação (2025)</p>
+            <h4 style="margin-top:8px">Contato rápido</h4>
+            <p class="kv">E-mail: <em>seu-email@exemplo.com</em> (substitua)</p>
+            <p class="kv">Disponibilidade: tardes e fins de semana</p>
+          </div>
+
+          <div style="margin-top:12px" class="card">
+            <h4>Redes</h4>
+            <p class="kv"><a href="github.html">Meu GitHub (ver projetos)</a></p>
+            <p class="kv">Time de futebol: Vasco</p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="card" id="midia">
+        <h3>Áudio & Vídeo</h3>
+        <p class="kv">Abaixo: um áudio de exemplo (arquivo de amostra) e um vídeo do YouTube (exemplo: "Baby" — substitua caso queira).</p>
+
+        <!-- Áudio: exemplo público -->
+        <p><strong>Áudio (exemplo):</strong></p>
+        <audio controls>
+          <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+          Seu navegador não suporta o elemento de áudio.
+        </audio>
+
+        <p style="margin-top:12px"><strong>Vídeo (YouTube exemplo):</strong></p>
+        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px">
+          <iframe src="https://www.youtube.com/embed/kffacxfA7G4" title="Baby - Justin Bieber (exemplo)" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" allowfullscreen></iframe>
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>Eventos & Trabalhos Acadêmicos</h3>
+        <p class="kv">Ainda não participou de eventos profissionais, mas desenvolveu atividades e pequenos projetos na faculdade e está disponível para trabalhos e estágios.</p>
+
+        <h4 style="margin-top:10px">Links e âncoras</h4>
+        <p class="kv">Use o menu para navegar entre as páginas. Ex.: <a href="curriculo.html">Currículo</a> • <a href="#midia">Áudio & Vídeo</a></p>
+      </section>
+
+      <section class="footer">
+        <div>© <strong>Vitor Mendonça</strong> • Projeto de 1º semestre • Tema claro</div>
+        <div style="margin-top:6px" class="kv">Substitua os contatos e links pelo seus reais antes de publicar.</div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vitor Mendonça — GitHub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <a class="brand" href="index.html">
+        <div class="logo">VM</div>
+        <div>
+          <div style="font-weight:800">Vitor Mendonça</div>
+          <div class="kv">GitHub & Projetos</div>
+        </div>
+      </a>
+      <nav class="nav" aria-label="menu principal">
+        <a href="index.html">Home</a>
+        <a href="curriculo.html">Currículo</a>
+        <a href="github.html">GitHub</a>
+        <a href="servicos.html">Serviços & Contato</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>Meu GitHub</h2>
+        <p class="kv">Abaixo está um link para o repositório onde você pode publicar este trabalho e outros projetos.</p>
+
+        <p><strong>Link do GitHub (substitua pelo seu):</strong></p>
+        <p><a class="btn" href="https://github.com/SEU-USUARIO" target="_blank" rel="noopener noreferrer">Acessar meu GitHub</a></p>
+
+        <h3 style="margin-top:12px">Como organizar os projetos</h3>
+        <ol class="kv">
+          <li>Crie um repositório chamado <code>landing-vitor</code>.</li>
+          <li>Adicione os arquivos (`index.html`, `curriculo.html`, `github.html`, `servicos.html`, `style.css`).</li>
+          <li>Ative o GitHub Pages e copie o link gerado para o Forms do professor.</li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <h3>Capturas e descrição</h3>
+        <p class="kv">Inclua screenshots do site na pasta do repositório para facilitar a avaliação (opcional).</p>
+      </section>
+
+      <section class="footer">
+        <a href="index.html" class="kv">← Voltar para Home</a>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vitor Mendonça — Serviços</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <a class="brand" href="index.html">
+        <div class="logo">VM</div>
+        <div>
+          <div style="font-weight:800">Vitor Mendonça</div>
+          <div class="kv">Serviços</div>
+        </div>
+      </a>
+      <nav class="nav" aria-label="menu principal">
+        <a href="index.html">Home</a>
+        <a href="curriculo.html">Currículo</a>
+        <a href="github.html">GitHub</a>
+        <a href="servicos.html">Serviços & Contato</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>Serviços de construção de site</h2>
+        <p class="kv">Foco principal: <strong>sites para academias</strong>, mas também posso produzir sites institucionais simples para pequenas empresas.</p>
+
+        <h3 style="margin-top:12px">Tipos de site que posso produzir</h3>
+        <ul class="kv">
+          <li>Site institucional / Landing Page (academia, estúdio, loja local)</li>
+          <li>Site de portfólio (pequenos negócios)</li>
+          <li>Páginas promocionais (eventos e inscrições)</li>
+        </ul>
+
+        <h3 style="margin-top:12px">Tabela de preços (página estática)</h3>
+        <table class="table">
+          <thead>
+            <tr><th>Tipo</th><th>Descrição</th><th>Preço (R$)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1–2 páginas</td><td>Landing simples, contato, informações</td><td>150</td></tr>
+            <tr><td>3–5 páginas</td><td>Site institucional com múltiplas seções</td><td>300</td></tr>
+            <tr><td>+5 páginas</td><td>Site com mais conteúdo e navegação</td><td>500</td></tr>
+            <tr><td>Dinâmico</td><td>Integração com backend simples / CMS</td><td>800</td></tr>
+            <tr><td>Avançado</td><td>Funcionalidades customizadas, e-commerce leve</td><td>1200</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="card" id="contato">
+        <h2>Contato / Solicitação de proposta</h2>
+        <p class="kv">Preencha o formulário abaixo para que eu entre em contato com proposta personalizada.</p>
+
+        <!-- Form: action deve ser ajustado para o servidor real ou serviço (ex: Formspree, Netlify forms) -->
+        <form action="#" method="post" onsubmit="alert('Este formulário é de exemplo. Configure um endpoint real antes de enviar.'); return false;">
+          <div class="form-row">
+            <div class="field">
+              <label class="kv">Nome completo</label>
+              <input class="input" type="text" name="nome" placeholder="Seu nome completo" required />
+            </div>
+            <div class="field">
+              <label class="kv">Telefone</label>
+              <input class="input" type="tel" name="telefone" placeholder="(xx) 9xxxx-xxxx" />
+            </div>
+          </div>
+
+          <div style="margin-top:8px" class="form-row">
+            <div class="field">
+              <label class="kv">E-mail</label>
+              <input class="input" type="email" name="email" placeholder="seu@exemplo.com" required />
+            </div>
+            <div class="field">
+              <label class="kv">Pessoa física ou jurídica</label>
+              <select name="tipo" class="input">
+                <option value="pf">Pessoa Física (PF)</option>
+                <option value="pj">Pessoa Jurídica (PJ)</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="margin-top:8px">
+            <label class="kv">Melhor horário para contato</label>
+            <div class="row" style="margin-top:6px">
+              <label><input type="radio" name="horario" value="manha" checked /> Manhã</label>
+              <label style="margin-left:8px"><input type="radio" name="horario" value="tarde" /> Tarde</label>
+              <label style="margin-left:8px"><input type="radio" name="horario" value="noite" /> Noite</label>
+            </div>
+          </div>
+
+          <div style="margin-top:8px">
+            <label class="kv">Que tipo de serviço deseja?</label>
+            <div class="row" style="margin-top:6px">
+              <label><input type="checkbox" name="servico[]" value="estatico" /> Site Estático</label>
+              <label style="margin-left:8px"><input type="checkbox" name="servico[]" value="dinamico" /> Site Dinâmico</label>
+              <label style="margin-left:8px"><input type="checkbox" name="servico[]" value="avancado" /> Projeto Avançado</label>
+            </div>
+          </div>
+
+          <div style="margin-top:8px">
+            <label class="kv">Descrição do que deseja</label>
+            <textarea name="descricao" rows="4" class="input" placeholder="Descreva brevemente o serviço desejado"></textarea>
+          </div>
+
+          <div style="margin-top:12px">
+            <button class="btn" type="submit">Enviar solicitação</button>
+            <a href="#contato" style="margin-left:8px" class="kv">Limpar</a>
+          </div>
+        </form>
+
+        <p class="kv" style="margin-top:10px">Observação: configure o atributo <code>action</code> do formulário para enviar dados para um serviço real (ex: Formspree, Netlify Forms, ou servidor próprio) antes de publicar.</p>
+      </section>
+
+      <section class="footer">
+        <a href="index.html" class="kv">← Voltar para Home</a>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
